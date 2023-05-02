@@ -1,4 +1,4 @@
-package com.nayem.bpldashboard;
+package io.nayem.bpldashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
