@@ -1,15 +1,30 @@
-import { React } from 'react';
+import { React, useEffect, useState } from 'react';
 import { MatchDetailCard } from '../components/MatchDetailCard';
 import { MatchSmallCard } from '../components/MatchSmallCard';
 
 export const TeamPage = () => {
-  return (
+    
+    const [team, setTeam] = useState({matches: []});
+
+    useEffect(
+        () => {
+            const fetchMatches = async() => {
+                const response = await fetch('http://localhost:8080/team/Comilla%20Victorians');
+                const data = await response.json();
+                setTeam(data);
+            };
+            fetchMatches();
+
+
+        }, []
+    );
+  
+    return (
     <div className="TeamPage">
-     <h1>Team Name</h1>
-     <MatchDetailCard/>
-     <MatchSmallCard/>
-     <MatchSmallCard/>
-     <MatchSmallCard/>
+     <h1>{team.teamName}</h1>
+     <MatchDetailCard match={team.matches[0]}/>
+     {team.matches.slice(1).map(match => <MatchSmallCard match={match}/>)}
+
     </div>
   );
 }
