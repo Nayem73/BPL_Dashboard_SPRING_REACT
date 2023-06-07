@@ -20,7 +20,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
         match.setMatchNo(matchInput.getMatch_no());
         //match.setDate(LocalDate.parse(matchInput.getDate()));
-        match.setDate(matchInput.getDate());
+        match.setDate(LocalDate.parse(matchInput.getDate()));
 
         //set Team1 and Team2 depending on innings order
         String firstInningsTeam, secondInningsTeam;
