@@ -6,12 +6,12 @@ import { MatchSmallCard } from '../components/MatchSmallCard';
 export const MatchPage = () => {
   
   const [matches, setMatches] = useState([]);
-  const teamName = "Comilla Victorians";
+  const { teamName, year } = useParams();
 
   useEffect(
     () => {
         const fetchMatches = async() => {
-            const response = await fetch(`http://localhost:8080/team/${teamName}/matches?year=2022`);
+            const response = await fetch(`http://localhost:8080/team/${teamName}/matches?year=${year}`);
             const data = await response.json();
             setMatches(data);
         };
