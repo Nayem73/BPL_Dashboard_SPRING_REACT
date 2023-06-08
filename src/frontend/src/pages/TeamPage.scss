@@ -9,12 +9,19 @@
     .team-name-section {
         grid-column: span 3;
         justify-self: start;
-        align-self: end;
+        align-self: center;
+        
     }
 
     .team-name {
         font-size: 4rem;
         margin-bottom: 20px;
+    }
+
+    .latest-matches {
+        font-size: 2rem;
+        // justify-self: end;
+        align-self: center;
     }
 
     .win-loss-section {
@@ -23,6 +30,11 @@
 
     .match-detail-section {
         grid-column: span 4;
+    }
+
+    .more-link {
+        align-self: self-start;
+        justify-self: center;
     }
 
 }

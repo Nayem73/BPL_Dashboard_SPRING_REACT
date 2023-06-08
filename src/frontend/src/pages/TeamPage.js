@@ -31,18 +31,19 @@ export const TeamPage = () => {
     <div className="TeamPage">
     <div className="team-name-section">
         <h1 className="team-name">{team.teamName}</h1>
+        <h3 className="latest-matches">Latest Matches</h3>
     </div>
     <div className="win-loss-section">
         Wins / Losses
     </div>
     <div className="match-detail-section">
-        <h3>Latest Matches</h3>
+        {/* <h3>Latest Matches</h3> */}
         <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
     </div>
      
      {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} match={match}/>)}
 
-    <div>
+    <div className="more-link">
         <a href="#">More</a>
     </div>
 
