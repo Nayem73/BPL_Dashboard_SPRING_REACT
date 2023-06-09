@@ -25,7 +25,9 @@
     }
 
     .win-loss-section {
-        justify-self: center;
+        justify-self:center;
+        padding: 40px;
+        text-align:center;
     }
 
     .match-detail-section {
@@ -35,6 +37,7 @@
     .more-link {
         align-self: self-start;
         justify-self: center;
+        font-size: 1.5rem;
     }
 
 }
