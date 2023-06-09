@@ -8,7 +8,18 @@
         padding: 20px;
     }
 
+    .back-to-home {
+        justify-self: end;
+        margin-top: 50px;
+    }
+
     .page-heading {
         margin: 20px auto;
+    }
+
+    .not-played {
+        font-size: 1.3rem;
+        color: #d42b4a;
+        padding: 20px;
     }
 }

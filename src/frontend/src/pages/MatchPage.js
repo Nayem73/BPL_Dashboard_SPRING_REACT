@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { MatchDetailCard } from '../components/MatchDetailCard';
 import { MatchSmallCard } from '../components/MatchSmallCard';
 
@@ -24,17 +24,27 @@ export const MatchPage = () => {
     }, [teamName, year]
   );
 
+  // if (!matches.year) {
+  //   return <h1>Team not found</h1>
+  // }
+
   return (
     <div className="MatchPage">
         <div className="year-selector">
           <h3>Select Year</h3>
           <YearSelector teamName={teamName} />
+          <div className="back-to-home"> <Link to={`/`}>Back to Teams</Link> </div>
         </div>
+        
         <div>
           <h1 className="page-heading">{teamName} matches in {year}</h1>
+           
           {
-            matches.map(match => <MatchDetailCard teamName={teamName} match={match}/>)
+            matches.length ?
+            matches.map(match => <MatchDetailCard teamName={teamName} match={match}/>) : 
+            <h1 className="not-played">{teamName} did not play in {year}</h1>
           }
+
         </div>
     </div>
   );
