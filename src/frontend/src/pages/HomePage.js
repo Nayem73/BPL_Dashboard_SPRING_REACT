@@ -27,7 +27,7 @@ export const HomePage = () => {
     return (
     <div className="HomePage">
     <div className="header-section">
-        <h1 className="app-name">BPL Dashboard</h1>
+        <h1 className="app-name">BPL All in One</h1>
     </div>
     <div className="team-grid">
         { teams.map(team => <TeamTile teamName={team.teamName}/>) }
