@@ -18,7 +18,12 @@ export const MatchDetailCard = ({teamName, match}) => {
           <h1><Link to={otherTeamRoute}>{otherTeam}</Link></h1>
 
           <h2 className="match-date">{match.date}</h2>
-          <h3 className="match-venue">at {match.venue}</h3>
+          {isLive == 'live' ? (
+            <h3 className="match-venue">LIVE from {match.venue}</h3>
+          ) : (
+            <h3 className="match-venue">at {match.venue}</h3>
+          )}
+          
           
           {isLive == 'live' ? (
             isTeam2Score != '0/0' ? (
